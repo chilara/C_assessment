@@ -92,13 +92,12 @@ a:hover {
 }
 
 .jumbotron {
-  margin-top: 12%;
   margin-left: 35%;
   width: 30%;
   background-color: #f8f9fd;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.01);
 }
 
 #img {

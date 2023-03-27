@@ -43,7 +43,7 @@ const displayNews = (data) => {
     };
 
     // setting the link
-    link.href = `./pages/content.html?id=${item.id}`;
+    link.href = `./pages/newsDetails.html?id=${item.id}`;
     // link.target = "_blank";
     link.innerHTML = "Details";
 

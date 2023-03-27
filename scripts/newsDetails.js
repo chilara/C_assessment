@@ -1,6 +1,6 @@
 let url_string = window.location.href;
 
-// convert to js representation of url
+// convert to js representation of url  and extracting the param from the url
 let url = new URL(url_string);
 const base_url = "https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1";
 

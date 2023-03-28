@@ -29,6 +29,31 @@ const displayNews = (data) => {
 
     let link1 = document.createElement("a");
 
+    let delLink = document.createElement("a");
+    delLink.className = "delete";
+    delLink.innerText = "delete";
+    delLink.style.backgroundColor = "red";
+    delLink.style.color = "#fff";
+    delLink.style.cursor = "pointer";
+
+    delLink.onclick = async () => {
+      try {
+        delStatus.innerHTML = "<h5>deleting...</h5>";
+        delLink.style.cursor = "not-allowed";
+        delLink.disabled = true;
+
+        const base_url = "https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1";
+        await fetch(`${base_url}/news/${item.id}`, { method: "DELETE" });
+        location.reload();
+      } catch (e) {
+        alert("An error occurred");
+      } finally {
+        delStatus.innerHTML = "";
+        delStatus.style.cursor = "pointer";
+        delStatus.disabled = false;
+      }
+    };
+
     // setting the title for an article
     title.innerText = item.title;
 
@@ -44,18 +69,20 @@ const displayNews = (data) => {
 
     // setting the link
     link.href = `./pages/newsDetails.html?id=${item.id}`;
-    // link.target = "_blank";
     link.innerHTML = "Details";
 
     link1.href = `./pages/updateNews.html?id=${item.id}`;
-    // link1.target = "_blank";
+    link1.style.backgroundColor = "transparent";
+    link1.style.border = "1px solid #0644cc";
     link1.innerHTML = "Update";
+    link1.style.color = "#0644cc";
 
     // append all article content
     article.appendChild(article_image);
     article.appendChild(title);
     article.appendChild(link);
     article.appendChild(link1);
+    article.appendChild(delLink);
 
     articleContainer.appendChild(article);
   });

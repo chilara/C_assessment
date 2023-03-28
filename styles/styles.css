@@ -39,6 +39,13 @@ header h1 {
   margin-top: 10px;
 }
 
+#delStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .articleContainer {
   display: flex;
   gap: 10px;
@@ -92,12 +99,13 @@ a:hover {
 }
 
 .jumbotron {
+  margin-top: 3%;
   margin-left: 35%;
   width: 30%;
   background-color: #f8f9fd;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.01);
+  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.15);
 }
 
 #img {
@@ -184,10 +192,6 @@ form input:focus {
 }
 
 @media screen and (max-width: 420px) {
-  .parent {
-    width: 100%;
-  }
-
   header h1 {
     font-weight: 500;
     text-align: center;
@@ -197,12 +201,34 @@ form input:focus {
   .articleContainer {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    /* flex-wrap: wrap;
-    justify-content: space-between; */
-    align-items: center;
-    width: 100%;
+    gap: 30px;
+    width: 50%;
     margin-top: 5%;
+  }
+
+  div {
+    width: 100%;
+    background-color: #f8f9fd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 3%;
+    box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.15);
+    border: 1px solid red;
+  }
+
+  .nav-btn {
+    margin-top: 8%;
     margin-left: 5%;
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+
+  form {
+    width: 70%;
+    background-color: #f8f9fd;
+    padding: 2rem;
+    margin: 2% auto;
+    box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.27);
   }
 }

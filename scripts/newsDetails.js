@@ -12,6 +12,7 @@ const getSingleNews = async (id) => {
   try {
     const response = await fetch(`${base_url}/news/${id}`);
     const newsData = await response.json();
+    console.log("000 >>>>>>>>>> ", newsData);
     await getComments(id);
     displayNewsDetails(newsData);
   } catch (error) {

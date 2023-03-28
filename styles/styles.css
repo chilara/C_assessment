@@ -57,15 +57,6 @@ header h1 {
   margin-left: 5%;
 }
 
-div {
-  width: 20%;
-  background-color: #f8f9fd;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 3%;
-  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.15);
-}
-
 h4 {
   margin-top: 5%;
   margin-bottom: 10%;
@@ -82,6 +73,39 @@ a {
   border-radius: 5px;
   margin-right: 15px;
   font-size: medium;
+}
+
+a#imgH {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+}
+a#imgH:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#imgL {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+  text-align: center;
+}
+
+a#imgL:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#imgD {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+}
+
+a#imgD:hover {
+  background-color: #0644cc;
+  color: #ffffff;
 }
 
 a:hover {

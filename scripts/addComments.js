@@ -71,8 +71,6 @@ const addBtnFn = async () => {
         comment: commentInput.value.trim(),
       }),
     });
-    // loadingStatus.innerHTML = "<h5>Loading...</h5>";
-    // addBtn.href = `./addComments.html?id=${get_id()}`;
     window.history.back();
   } catch (error) {
     console.log(error);

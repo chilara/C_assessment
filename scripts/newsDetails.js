@@ -50,7 +50,18 @@ const displayNewsDetails = (data) => {
 // displaying comments
 const displayComments = (data) => {
   const ulTag = document.querySelector("#comments");
-  const comments = data.map((item) => `<li>${item.comment}</li>`);
+  const comments = data.map(
+    (item) =>
+      `
+    <div style="display: flex; justify-content: space-between;">
+    <li>${item.comment}</li>
+    <div>
+      <a href="" id="imgEdit" class="commentBtn">Edit</a>
+      <a href="" id="del" style="background-color: red; color: #fff; cursor: pointer; border; none" class="commentBtn">Delete</a>
+    </div>
+    </div>
+    `
+  );
   ulTag.innerHTML = comments;
 };
 
@@ -76,29 +87,6 @@ const getComments = async (id) => {
       add.href = `./addComments.html?id=${get_id()}`;
     } catch (error) {
       console.log(error);
-    }
-  };
-
-  // edit comments
-  edit.innerText = "edit";
-  edit.id = "imgEdit";
-
-  // delete comments
-  del.innerText = "delete";
-  del.style.backgroundColor = "red";
-  del.style.color = "#fff";
-  del.style.cursor = "pointer";
-  del.style.border = "none";
-
-  del.onclick = async () => {
-    try {
-      const base_url = "https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1";
-      await fetch(`${base_url}/news/${item.id}/comments/${item.id}`, {
-        method: "DELETE",
-      });
-      location.reload();
-    } catch (e) {
-      alert("An error occurred");
     }
   };
 };

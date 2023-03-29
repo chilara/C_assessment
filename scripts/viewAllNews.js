@@ -21,7 +21,11 @@ const displayNews = (data) => {
 
     let article = document.createElement("div");
 
+    let container = document.createElement("div");
+
     let article_image = document.createElement("img");
+
+    let img_link = document.createElement("a");
 
     let title = document.createElement("h4");
 
@@ -30,11 +34,12 @@ const displayNews = (data) => {
     let link1 = document.createElement("a");
 
     let delLink = document.createElement("a");
-    delLink.className = "delete";
+
     delLink.innerText = "delete";
     delLink.style.backgroundColor = "red";
     delLink.style.color = "#fff";
     delLink.style.cursor = "pointer";
+    delLink.style.border = "none";
 
     delLink.onclick = async () => {
       try {
@@ -70,15 +75,32 @@ const displayNews = (data) => {
     // setting the link
     link.href = `./pages/newsDetails.html?id=${item.id}`;
     link.innerHTML = "Details";
+    link.id = "imgD";
 
     link1.href = `./pages/updateNews.html?id=${item.id}`;
-    link1.style.backgroundColor = "transparent";
     link1.style.border = "1px solid #0644cc";
     link1.innerHTML = "Update";
-    link1.style.color = "#0644cc";
+    link1.id = "imgH";
+
+    img_link.href = `./pages/viewAllImages.html?id=${item.id}`;
+    img_link.innerHTML = "images";
+    img_link.style.height = "19px";
+    img_link.id = "imgL";
+
+    article.style.backgroundColor = "#f8f9fd";
+    article.style.padding = "20px";
+    article.style.borderRadius = "5px";
+    article.style.marginBottom = "3%";
+    article.style.boxShadow = "3px 10px 13px -2px rgba(0, 0, 0, 0.15)";
+
+    container.style.display = "flex";
+    container.style.gap = "20px";
+    container.backgroundColor = "transparent";
 
     // append all article content
-    article.appendChild(article_image);
+    container.appendChild(article_image);
+    container.appendChild(img_link);
+    article.appendChild(container);
     article.appendChild(title);
     article.appendChild(link);
     article.appendChild(link1);

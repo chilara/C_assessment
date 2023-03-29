@@ -48,10 +48,10 @@ const fetchNewsDetails = async () => {
 
 const updateNews = async () => {
   const body = {
-    author1: author1.value.trim(),
-    newsTitle: newsTitle.value.trim(),
-    avatarLink: avatarLink.value.trim(),
-    newsUrl: newsUrl.value.trim(),
+    author: author1.value.trim(),
+    title: newsTitle.value.trim(),
+    avatar: avatarLink.value.trim(),
+    url: newsUrl.value.trim(),
   };
 
   try {

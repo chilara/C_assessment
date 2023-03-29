@@ -22,6 +22,7 @@ header {
 }
 
 nav {
+  display: flex;
   background-color: #0644cc;
   height: 90px;
 }
@@ -57,21 +58,21 @@ header h1 {
   margin-left: 5%;
 }
 
-div {
-  width: 20%;
-  background-color: #f8f9fd;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 3%;
-  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.15);
-}
-
 h4 {
   margin-top: 5%;
   margin-bottom: 10%;
   font-size: 15px;
   width: 90%;
   color: #0644cc;
+}
+
+.img-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentBtn {
+  height: 17px;
 }
 
 a {
@@ -84,6 +85,61 @@ a {
   font-size: medium;
 }
 
+a#imgH {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+}
+a#imgH:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#imgL {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+  text-align: center;
+}
+
+a#imgL:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#imgD {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+}
+
+a#imgD:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#imgAdd {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+}
+
+a#imgAdd:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#imgEdit {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+}
+
+a#imgEdit:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
 a:hover {
   background-color: white;
   color: #0644cc;
@@ -91,16 +147,24 @@ a:hover {
 }
 
 .nav-btn {
-  margin-top: 2.5%;
   margin-left: 5%;
   background-color: transparent;
   border: none;
   color: white;
 }
 
+.form-parent {
+  justify-content: center;
+  display: flex;
+}
+
+.jumbotron-parent {
+  justify-content: center;
+  display: flex;
+}
+
 .jumbotron {
   margin-top: 3%;
-  margin-left: 35%;
   width: 30%;
   background-color: #f8f9fd;
   padding: 10px;
@@ -191,34 +255,34 @@ form input:focus {
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 800px) {
   header h1 {
     font-weight: 500;
     text-align: center;
     margin: 50px 40px;
   }
 
+  .jumbotron {
+    width: 80%;
+  }
+
   .articleContainer {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 50%;
+
     margin-top: 5%;
   }
 
   div {
-    width: 100%;
-    background-color: #f8f9fd;
-    padding: 15px;
-    border-radius: 5px;
     margin-bottom: 3%;
-    box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.15);
-    border: 1px solid red;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
   }
 
   .nav-btn {
-    margin-top: 8%;
-    margin-left: 5%;
     background-color: transparent;
     border: none;
     color: white;

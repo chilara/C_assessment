@@ -20,15 +20,23 @@
       </nav>
       <h1>News Details</h1>
     </header>
-    <div class="jumbotron">
-      <img id="img" alt="" /><br />
-      <p id="title"></p>
-      <br />
-      <p id="url"></p>
-      <br />
-      <p id="author"></p>
-      <br />
-      <ul id="comments"></ul>
+    <div id="loadingStatus"></div>
+    <div class="jumbotron-parent">
+      <div class="jumbotron" id="jumbotron">
+        <div class="img-btn">
+          <img id="img" alt="" /><br />
+          <a href="" id="add" class="commentBtn"></a>
+        </div>
+        <p id="title"></p>
+        <br />
+        <p id="url"></p>
+        <br />
+        <p id="author"></p>
+        <br />
+        <div id="divider">
+          <ul id="comments"></ul>
+        </div>
+      </div>
     </div>
     <script src="../scripts/newsDetails.js"></script>
   </body>

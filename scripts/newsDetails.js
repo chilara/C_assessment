@@ -5,6 +5,7 @@ let del = document.getElementById("del");
 let url_string = window.location.href;
 let loadingDiv = document.getElementById("loadingStatus");
 let jumbotron = document.getElementById("jumbotron");
+let btnImg = document.getElementById("btnImg");
 
 // convert to js representation of url  and extracting the param from the url
 let url = new URL(url_string);
@@ -80,6 +81,19 @@ const getComments = async (id) => {
   add.innerText = "add comment";
   add.id = "imgAdd";
   const inputComment = document.getElementById("add");
+
+  // add images
+  btnImg.innerText = "add image";
+  btnImg.id = "btnAdd";
+
+  btnImg.onclick = () => {
+    try {
+      loadingStatus.innerHTML = "<h5>Loading...</h5>";
+      btnImg.href = `./addImages.html?id=${get_id()}`;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   add.onclick = () => {
     try {

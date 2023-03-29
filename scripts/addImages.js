@@ -1,6 +1,4 @@
-let commentInput = document.getElementById("comment-input");
-let nameInput = document.getElementById("name-comment");
-let avatarInput = document.getElementById("avatar-comment");
+let uploadImage = document.getElementById("upload-image");
 let addBtn = document.getElementById("createBtn");
 const createForm = document.getElementById("createForm");
 const url_string = window.location.href;
@@ -60,15 +58,13 @@ const getComments = async (id) => {
   };
 };
 
-const addBtnFn = async () => {
+const imgBtnFn = async () => {
   try {
-    await fetch(`${base_url}/news/${get_id()}/comments`, {
+    await fetch(`${base_url}/news/${get_id()}/images`, {
       method: "POST",
       body: JSON.stringify({
         newsId: get_id(),
-        name: nameInput.value.trim(),
-        avatar: avatarInput.value.trim(),
-        comment: commentInput.value.trim(),
+        image: uploadImage.value.trim(),
       }),
     });
     window.history.back();
@@ -79,5 +75,5 @@ const addBtnFn = async () => {
 
 createForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  addBtnFn();
+  imgBtnFn();
 });

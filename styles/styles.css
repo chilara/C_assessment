@@ -122,9 +122,22 @@ a#imgAdd {
   background-color: transparent;
   color: #0644cc;
   border: 1px solid #0644cc;
+  height: 20px;
 }
 
 a#imgAdd:hover {
+  background-color: #0644cc;
+  color: #ffffff;
+}
+
+a#btnAdd {
+  background-color: transparent;
+  color: #0644cc;
+  border: 1px solid #0644cc;
+  height: 20px;
+}
+
+a#btnAdd:hover {
   background-color: #0644cc;
   color: #ffffff;
 }

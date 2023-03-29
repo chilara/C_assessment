@@ -17,6 +17,8 @@ https://lorempixel.vercel.app/
 - Vanilla Javascript
 - HTML
 - CSS
+- Git
+- Vercel
 
 ## Author
 

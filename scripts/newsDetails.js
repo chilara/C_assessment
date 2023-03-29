@@ -77,7 +77,7 @@ const getComments = async (id) => {
   }
 
   // add comments
-  add.innerText = "add";
+  add.innerText = "add comment";
   add.id = "imgAdd";
   const inputComment = document.getElementById("add");
 

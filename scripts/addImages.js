@@ -2,6 +2,7 @@ let uploadImage = document.getElementById("upload-image");
 let addBtn = document.getElementById("createBtn");
 const createForm = document.getElementById("createForm");
 const url_string = window.location.href;
+const loadingStatus = document.getElementById("loadingStatus");
 
 // convert to js representation of url  and extracting the param from the url
 let url = new URL(url_string);
@@ -47,10 +48,12 @@ const getComments = async (id) => {
 
   del.onclick = async () => {
     try {
+      loadingStatus.innerText = "Loading";
       const base_url = "https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1";
       await fetch(`${base_url}/news/${item.id}/comments/${item.id}`, {
         method: "DELETE",
       });
+      loadingStatus.innerText = "";
       location.reload();
     } catch (e) {
       alert("An error occurred");

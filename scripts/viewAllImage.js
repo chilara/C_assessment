@@ -10,6 +10,27 @@ const get_id = () => {
   return url.searchParams.get("id");
 };
 
+let imgIndex = 1;
+
+function incrementDivs(n) {
+  displayDivs((imgIndex += n));
+}
+
+function displayDivs(n) {
+  let i;
+  let x = document.getElementsByClassName("article-imgs");
+  if (n > x.length) {
+    imgIndex = 1;
+  }
+  if (n < 1) {
+    imgIndex = x.length;
+  }
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[imgIndex - 1].style.display = "block";
+}
+
 const articleId = get_id();
 
 const getImageNews = async () => {
@@ -19,6 +40,7 @@ const getImageNews = async () => {
     const data = await response.json();
     console.log(data);
     displayImages(data);
+    displayDivs(imgIndex);
   } catch (error) {
     console.log(error);
   } finally {
@@ -29,25 +51,17 @@ const getImageNews = async () => {
 const displayImages = (data) => {
   data.map((item) => {
     let articleContainer = document.getElementById("articleContainer");
-
-    let article = document.createElement("div");
-
-    let container = document.createElement("div");
-
     let article_image = document.createElement("img");
-
     article_image.src = item.image;
     article_image.alt = "article image";
-    article_image.width = "200";
-
+    article_image.className = "article-imgs";
+    article_image.style.width = "500px";
+    article_image.style.height = "400px";
     article_image.onerror = () => {
       article_image.onerror = null;
       article_image.src = "./assets/logo.png";
     };
-
-    container.appendChild(article_image);
-    article.appendChild(container);
-    articleContainer.appendChild(article);
+    articleContainer.appendChild(article_image);
   });
 };
 

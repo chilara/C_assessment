@@ -88,7 +88,6 @@ const getComments = async (id) => {
 
   btnImg.onclick = () => {
     try {
-      loadingStatus.innerHTML = "<h5>Loading...</h5>";
       btnImg.href = `./addImages.html?id=${get_id()}`;
     } catch (error) {
       console.log(error);
@@ -97,7 +96,6 @@ const getComments = async (id) => {
 
   add.onclick = () => {
     try {
-      loadingStatus.innerHTML = "<h5>Loading...</h5>";
       add.href = `./addComments.html?id=${get_id()}`;
     } catch (error) {
       console.log(error);
